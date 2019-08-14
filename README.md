@@ -2,7 +2,8 @@
 
 ![](https://github.com/jiang111/FloatActionView/raw/master/art/art.gif)
 
-### 集成
+### 集成 [![](https://jitpack.io/v/jiang111/FloatActionView.svg)](https://jitpack.io/#jiang111/FloatActionView)
+
 ```
 Step 1. Add the JitPack repository to your build file
 
