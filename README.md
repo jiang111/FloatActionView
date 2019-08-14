@@ -26,7 +26,8 @@ Step 2. Add the dependency
 
 
 ### 示例
-``` 
+```
+//请注意,布局文件中必须有个同级别的ViewGroup,并且它的LayoutParam为match_parent 才能达到最佳效果
 FloatActionView actionView = findViewById(R.id.actionview);
         actionView.setMainButtonIcon(R.drawable.ic_add_black_24dp);
         actionView.setOnClick(new FloatActionView.OnClick() {
