@@ -3,6 +3,7 @@ package com.jyuesong.android.floatactionviewdemo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.jyuesong.android.floatactionview.FloatActionView;
@@ -11,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,16 +24,19 @@ public class MainActivity extends AppCompatActivity {
         actionView.setOnClick(new FloatActionView.OnClick() {
             @Override
             public void positionClicked(int position) {
+                Log.i(TAG, "positionClicked: " + position);
 
             }
 
             @Override
             public void mainClicked() {
+                Log.i(TAG, "mainClicked: ");
 
             }
 
             @Override
             public void dismissed() {
+                Log.i(TAG, "dismissed: ");
             }
         });
         List<String> tips = new ArrayList<>();

@@ -245,8 +245,7 @@ public class FloatActionView extends FrameLayout {
             throw new IllegalArgumentException("tips size not equals resID size");
         }
 
-        for (int i = 0; i < tips.size(); i++) {
-
+        for (int i = tips.size() - 1; i >= 0; i--) {
 
             final FloatCellView floatCellView = new FloatCellView(getContext(), tips.get(i), resID.get(i));
             floatCellView.setLayoutParams(FloatActiongViewUtils.generateLayoutParam(LayoutParams.MATCH_PARENT, FloatActiongViewUtils.dip2px(getContext(), 60)));
