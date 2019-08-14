@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
@@ -107,7 +108,9 @@ public class BlurringView extends View {
     }
 
     public void setBlurRadius(int radius) {
-        mBlurScript.setRadius(radius);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            mBlurScript.setRadius(radius);
+        }
     }
 
     public void setDownsampleFactor(int factor) {
@@ -127,7 +130,9 @@ public class BlurringView extends View {
 
     private void initializeRenderScript(Context context) {
         mRenderScript = RenderScript.create(context);
-        mBlurScript = ScriptIntrinsicBlur.create(mRenderScript, Element.U8_4(mRenderScript));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            mBlurScript = ScriptIntrinsicBlur.create(mRenderScript, Element.U8_4(mRenderScript));
+        }
     }
 
     protected boolean prepare() {
@@ -175,8 +180,10 @@ public class BlurringView extends View {
 
     protected void blur() {
         mBlurInput.copyFrom(mBitmapToBlur);
-        mBlurScript.setInput(mBlurInput);
-        mBlurScript.forEach(mBlurOutput);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            mBlurScript.setInput(mBlurInput);
+            mBlurScript.forEach(mBlurOutput);
+        }
         mBlurOutput.copyTo(mBlurredBitmap);
     }
 

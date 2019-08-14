@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         FloatActionView actionView = findViewById(R.id.actionview);
         actionView.setMainButtonIcon(R.drawable.ic_add_black_24dp);
         actionView.setOnClick(new FloatActionView.OnClick() {
