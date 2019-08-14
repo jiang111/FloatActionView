@@ -2,9 +2,29 @@
 
 ![](https://github.com/jiang111/FloatActionView/raw/master/art/art.gif)
 
+### 集成
+```
+Step 1. Add the JitPack repository to your build file
+
+Add it in your root build.gradle at the end of repositories:
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+
+Step 2. Add the dependency
+
+	dependencies {
+	        implementation 'com.github.jiang111:FloatActionView:1.0.0'
+	}
 
 
-### usage
+```
+
+
+### 示例
 ``` 
 FloatActionView actionView = findViewById(R.id.actionview);
         actionView.setMainButtonIcon(R.drawable.ic_add_black_24dp);
