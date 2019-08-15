@@ -50,7 +50,7 @@ FloatActionView actionView = findViewById(R.id.actionview);
         List<Integer> images = new ArrayList<>();
         actionView.setData(tips, images);
 
-
+actionView.dismiss();  //dismiss the view
 
 //可通过new FloatActionView.Builder()来对整个样式进行全局配置
 

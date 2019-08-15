@@ -171,7 +171,7 @@ public class FloatActionView extends FrameLayout {
 
     }
 
-    private void animatMenu(boolean expand) {
+    public void animatMenu(boolean expand) {
         if (state == EXPANDING) return;
         if (mBGView.getBlurredView() == null) {
             mBGView.setBlurredView(findBlurView());
@@ -372,5 +372,10 @@ public class FloatActionView extends FrameLayout {
         }
     }
 
+    public void dismiss() {
+        if (state == EXPANDED) {
+            animatMenu(false);
+        }
+    }
 
 }
